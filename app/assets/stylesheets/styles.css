@@ -1,0 +1,9 @@
+.btn_grp {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn_grp a {
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,17 @@
+<h1>All articles</h1>
+
+<p>Random Article of the day:</p>
+<p><%= @random_article.name %></p>
+
+<%= link_to 'New Article', new_article_path %>
+
+<% @articles.each do |article| %>
+    <%= render "article",article: article %>
+
+    <div class="btn_grp">
+        <button class="edit_btn"><%= link_to 'Edit', edit_article_path(article) %></button>
+        <%= button_to 'Delete', delete_article_path(article), method: :delete %>
+    </div>
+
+    <br><br>
+<% end %>
