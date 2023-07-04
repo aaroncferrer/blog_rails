@@ -6,6 +6,8 @@
         <%= f.text_field :name %><br>
     </p>
 
+    <img src="<%= image_path @article.img_name.downcase %>" class="article_img">
+
     <p>
         <%= f.label :body %><br>
         <%= f.text_field :body %><br>

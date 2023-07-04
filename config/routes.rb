@@ -3,10 +3,14 @@ Rails.application.routes.draw do
 
   # localhost:3000/articles
   get '/articles' => 'articles#index'
+  # root 'articles#index'
 
   # localhost:3000/articles/new
   get '/articles/new' => 'articles#new', as: 'new_article'
-  post '/articles' => 'articles#create', as: 'create_article' # => create_article_path
+  post '/articles' => 'articles#create', as: 'create_article' 
+
+  # localhost:3000/articles/id
+  get '/articles/:id' => 'articles#show', as: 'show_article'
 
   # edit
   get '/articles/:id/edit' => 'articles#edit', as: 'edit_article'

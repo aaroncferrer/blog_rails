@@ -7,3 +7,25 @@
     text-decoration: none;
     color: black;
 }
+
+.article_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 25rem; 
+    margin: 0 auto 2rem; 
+}
+
+.article_img {
+    max-width: 100%;
+}
+
+.article_text p {
+    margin: 0;
+}

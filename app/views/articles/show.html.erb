@@ -1,0 +1,10 @@
+<div>
+    <img src="<%= image_path @article.img_name.downcase %>">
+    <p><%= @article.name %></p>
+    <p><%= @article.body %></p>
+
+    <div class="btn_grp">
+        <button class="edit_btn"><%= link_to 'Edit', edit_article_path(@article) %></button>
+        <%= button_to 'Delete', delete_article_path(@article), method: :delete %>
+    </div> 
+</div>
