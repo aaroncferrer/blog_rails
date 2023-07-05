@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get '/articles/:id' => 'articles#show', as: 'show_article'
 
   # edit
-  get '/articles/:id/edit' => 'articles#edit', as: 'edit_article'
   patch '/articles/:id' => 'articles#update', as: 'update_article'
 
   # delete

@@ -1,10 +1,33 @@
-<div>
-    <img src="<%= image_path @article.img_name.downcase %>">
-    <p><%= @article.name %></p>
-    <p><%= @article.body %></p>
-
-    <div class="btn_grp">
-        <button class="edit_btn"><%= link_to 'Edit', edit_article_path(@article) %></button>
-        <%= button_to 'Delete', delete_article_path(@article), method: :delete %>
-    </div> 
-</div>
+<section class="show">
+    <!-- Modal -->
+    <div class="modal modal-lg fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content edit_modal">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 form_title" id="articleModalLabel">UPDATE ARTICLE</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        <div class="modal-body">
+            <%= render 'edit' %>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <article class="show_container">
+        <div class="show_img_container">
+            <img src="<%= image_path @article.img_name.downcase %>">
+        </div>
+        <div class="show_text_container">
+            <h2><%= @article.name %></h2>
+            <p><%= simple_format(@article.body) %></p>
+            <div class="btn_grp">
+                <button type="button" class="btns btn-primary" data-bs-toggle="modal" data-bs-target="#articleModal">
+                    Edit
+                </button>
+                <%= button_to 'Delete', delete_article_path(@article), method: :delete, class: 'btns btn-primary' %>
+            </div>
+        </div>
+    </article>
+    
+</section>

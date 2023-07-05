@@ -1,9 +1,23 @@
-<h1>All articles</h1>
 
-<%= link_to 'New', new_article_path %>
+<section class="home">
 
-<div class="article_container">
-    <% @articles.each do |article| %>
-        <%= render "article",article: article %>   
-    <% end %>
-</div>
+    <div class="header_container">
+        <h1>Through the Lens of Time: A Visual Tapestry of Timeless Memories</h1>
+        <div class="sub_header">
+            <%= link_to 'NEW ARTICLE', new_article_path %>
+            <span>•</span>
+            <a href="https://www.instagram.com/aafilmvault/" target="_blank">INSTAGRAM</a>
+        </div>
+        <p>
+            Discovering a vintage film store in Taiwan was a stroke of luck. The kind-hearted grandma there offered me a discounted deal, including free films. Intrigued, I couldn't resist buying them. Ever since that moment, my vintage film camera has become an inseparable companion on my travels and during significant events. Together with my trusty Polaroid camera, it immortalizes the precious memories I make along the way. I'm also excited to delve deeper into the world of film development, exploring the techniques that will bring these captured moments to life.
+        </p>
+    </div>
+
+    <div class="article_container">
+        <% @articles.each do |article| %>
+            <%= render "article",article: article %>   
+        <% end %>
+    </div>
+
+</section>
+

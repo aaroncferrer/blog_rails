@@ -1,10 +1,12 @@
 <div class="article">
     <%= link_to show_article_path(article) do %>
-        <img src="<%= image_path article.img_name.downcase %>" class="article_img">
+        <div class="img_container">
+            <img src="<%= image_path article.img_name.downcase %>" class="article_img">
+        </div>
     <% end %>
 
     <div class="article_text">
-        <p>Name: <%= article.name %></p>
-        <p>Preview: <%= article.preview %></p>
+        <p class="article_name"><%= article.name %></p>
+        <p class="article_preview"><%= article.preview %></p>
     </div> 
 </div>
