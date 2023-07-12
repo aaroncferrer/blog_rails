@@ -15,9 +15,17 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  # test "should create post" do
+  #   assert_difference("Post.count", 1) do
+  #     post posts_url, params: { post: { category: @post.category, content: @post.content, title: @post.title } }
+  #   end
+
+  #   assert_redirected_to post_url(Post.last)
+  # end
+
   test "should create post" do
-    assert_difference("Post.count") do
-      post posts_url, params: { post: { category: @post.category, content: @post.content, title: @post.title } }
+    assert_difference("Post.count", 1) do
+      post posts_url, params: { post: { category: "Category", content: "Content", title: "Title" } }
     end
 
     assert_redirected_to post_url(Post.last)
@@ -34,7 +42,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post" do
-    patch post_url(@post), params: { post: { category: @post.category, content: @post.content, title: @post.title } }
+    patch post_url(@post), params: { post: { category: @post.category, content: @post.content, title: "Updated Title" } }
     assert_redirected_to post_url(@post)
   end
 
